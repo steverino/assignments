@@ -1,3 +1,4 @@
+const readline = require("readline-sync")
 let myBtn = document.querySelector('.btn');
 
 // 1.
