@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  /* border: 2px solid #000; */
+}
+
+.btn {
+  display: inline-block;
+  background: hsl(205, 79%, 60%);
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px 0;
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.btn:hover {
+  background: hsl(205, 86%, 17%);
+  color: hsl(205, 79%, 60%);
+}
