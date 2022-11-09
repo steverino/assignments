@@ -1,4 +1,4 @@
-let myBtn = document.querySelector('.btn');
+let myBtn = document.querySelector(".btn");
 
 // 1.
 // function hello(){
@@ -10,8 +10,18 @@ let myBtn = document.querySelector('.btn');
 // myBtn.addEventListener('click', function() {alert('You clicked the button!!!')});
 
 // 3. arrow function
-myBtn.addEventListener('click', () => {
-    let info = 'You clicked the button!!!';
-    document.querySelector('.result').innerHTML = info;
-});
 
+let clicked = true;
+let btnVal = document.querySelector(".btn");
+
+myBtn.addEventListener("click", () => {
+  if (clicked) {
+    btnVal.innerHTML = "clear me"
+    document.querySelector(".result").innerHTML = "clicked";
+    clicked = false;
+  } else {
+    btnVal.innerHTML = "click me"
+    document.querySelector(".result").innerHTML = "";
+    clicked = true;
+  }
+});
