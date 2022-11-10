@@ -4,6 +4,7 @@ var powerRangers = [
   "Zack Taylor",
   "Trini Kwan",
   "Billy Cranston",
+  "Tommy Oliver"
 ];
 var rangersList = document.getElementById("rangers");
 
