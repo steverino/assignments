@@ -14,3 +14,7 @@
 let h1Text = document.querySelector('h1').textContent;
 document.querySelector('p').textContent = h1Text;
 // console.log(h1Text);
+
+console.log(document.querySelector('h1').classList.toggle('red'));
+console.log(document.querySelector('h1').classList.toggle('green'));
+console.log(document.querySelector('p').className);
