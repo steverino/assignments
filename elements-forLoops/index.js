@@ -5,9 +5,9 @@ var powerRangers = [
   "Trini Kwan",
   "Billy Cranston",
 ];
+var rangersList = document.getElementById("rangers");
 
 for (i = 0; i < powerRangers.length; i++) {
-  var rangersList = document.getElementById("rangers");
   var newName = document.createElement("li");
   newName.textContent = powerRangers[i];
   rangersList.append(newName);
