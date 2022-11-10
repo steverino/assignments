@@ -7,9 +7,12 @@ logBtn.addEventListener("click", addLogItem);
 
 function addLogItem(){
 
-    document.querySelector('.log').textContent = logInput;
-    // console.log(logInput);
-        
-    
+    let list = document.querySelector('.list');
+    // console.log(list);
 
-}
+    let newLi = document.createElement('li');
+    newLi.textContent = logInput;
+    console.log(logInput);
+    document.querySelector('.list').append(newLi);
+    
+}  
