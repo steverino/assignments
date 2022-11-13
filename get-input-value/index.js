@@ -5,8 +5,8 @@ document.querySelector("title").textContent = "Log Input";
 
 logBtn.addEventListener("click", addLogItem);
 
-function addLogItem(){
-
+function addLogItem(e){
+e.preventDefault();
     let list = document.querySelector('.list');
     // console.log(list);
 
