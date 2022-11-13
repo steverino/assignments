@@ -64,37 +64,45 @@ sendBtn = send.querySelector("button");
 
 // document.querySelector("#input").value = '';
 let messages = document.querySelector(".messages");
-
+console.log('messages ');
 msgArray = messages.children;
 for (i = 0; i < msgArray.length; i++) {
   console.log(msgArray.item(i));
 }
 
-let sendMsg = document.querySelector("#input").value; //A new value is loaded on click
 let divMsg = document.createElement("div");
 divMsg.classList.add("message", "left");
-divMsg.textContent = sendMsg;
-messages.append(divMsg);
 
 sendBtn.addEventListener("click", leftSide);
 // e.preventDefault(); // so the page doesn't reload and reset everything
 
 function leftSide(e) {
   e.preventDefault();
+   
+  let sendMsg = document.querySelector("#input").value; //A new value is loaded on click
+  divMsg.textContent = sendMsg;
+  // messages.append(divMsg);
+
+
   if (divMsg.classList.contains("left")) {
     console.log(divMsg.classList.contains("left"));
     divMsg.style.alignSelf = "flex-end";
-    messages.append(divMsg);
+    
     divMsg.classList.remove("left");
     divMsg.classList.add("right");
-    console.log("1st " + divMsg.classList);
+    // messages.append(divMsg);
+    
+    console.log('1st ' + divMsg.classList);
   } else if (divMsg.classList.contains("right")) {
+    console.log(divMsg.classList.contains("left"));
     divMsg.style.alignSelf = "flex-start";
-    messages.append(divMsg);
+    
     divMsg.classList.remove("right");
     divMsg.classList.add("left");
+    
     console.log("2nd " + divMsg.classList);
   }
+  messages.append(divMsg);
 }
 
 // console.log(right[1].textContent);
