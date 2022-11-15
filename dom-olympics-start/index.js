@@ -64,45 +64,51 @@ sendBtn = send.querySelector("button");
 
 // document.querySelector("#input").value = '';
 let messages = document.querySelector(".messages");
-console.log('messages ');
-msgArray = messages.children;
-for (i = 0; i < msgArray.length; i++) {
-  console.log(msgArray.item(i));
-}
+console.log(messages);
 
+let msgBox = document.createElement("div");
 let divMsg = document.createElement("div");
-divMsg.classList.add("message", "left");
 
-sendBtn.addEventListener("click", leftSide);
-// e.preventDefault(); // so the page doesn't reload and reset everything
+// divMsg.textContent = document.getElementById("input").value;
+// console.log(divMsg);
+sendBtn.addEventListener("click", toggleLR);
 
-function leftSide(e) {
-  e.preventDefault();
-   
-  let sendMsg = document.querySelector("#input").value; //A new value is loaded on click
-  divMsg.textContent = sendMsg;
-  // messages.append(divMsg);
+let state = false;
 
+function leftSide() {
+  state = false;
+  console.log("left");
+  // divMsg.style.alignSelf = "flex-end";
+  let divMsgLeft = document.createElement("div");
+    
+  divMsgLeft.textContent = document.getElementById("input").value;
+  divMsgLeft.classList.remove("message", "right");
+  divMsgLeft.classList.add("message", "left");
 
-  if (divMsg.classList.contains("left")) {
-    console.log(divMsg.classList.contains("left"));
-    divMsg.style.alignSelf = "flex-end";
-    
-    divMsg.classList.remove("left");
-    divMsg.classList.add("right");
-    // messages.append(divMsg);
-    
-    console.log('1st ' + divMsg.classList);
-  } else if (divMsg.classList.contains("right")) {
-    console.log(divMsg.classList.contains("left"));
-    divMsg.style.alignSelf = "flex-start";
-    
-    divMsg.classList.remove("right");
-    divMsg.classList.add("left");
-    
-    console.log("2nd " + divMsg.classList);
-  }
-  messages.append(divMsg);
+  messages.append(divMsgLeft);
+  document.getElementById("input").value = "";
+  state = true;
 }
 
+function rightSide() {
+  state = true;
+  console.log("right");
+  // divMsg.style.alignSelf = "flex-start";
+  let divMsgRight = document.createElement("div");
+  
+  divMsgRight.textContent = document.getElementById("input").value;
+  divMsgRight.classList.remove("message", "left");
+  divMsgRight.classList.add("message", "right");
+  messages.append(divMsgRight);
+  document.getElementById("input").value = "";
+  state = false;
+}
+
+function toggleLR(e) {
+  e.preventDefault();
+  console.log(state);
+
+  state ? rightSide() : leftSide();
+  // messages.append(divMsg);
+}
 // console.log(right[1].textContent);
