@@ -3,7 +3,7 @@ const subBtn = document.querySelector("#addItem");
 const delBtn = document.querySelector(".delete-btn");
 let editBtn;
 
-document.querySelector("#tb-h5").style.display = "none";
+// document.querySelector("#tb-h5").style.display = "none";
 
 document.querySelector(".input").setAttribute("required", ""); //??? not working ???
 
@@ -21,7 +21,7 @@ function addLi(e) {
 
   liDiv.value = document.querySelector(".input").value; //add user inout to div
   liDiv.setAttribute("class", "item");
-  console.log(liDiv.textContent);
+//   console.log(liDiv.textContent);
 
   editBtn.setAttribute("class", "edit-btn");
   editBtn.textContent = "Edit item"; // name the button
@@ -31,17 +31,21 @@ function addLi(e) {
   delBtn.setAttribute("class", "delete-btn");
   delBtn.textContent = "X"; // name the button
   delBtn.addEventListener("click", removeItem);
-
+  
   li.append(liDiv, editBtn, delBtn); // add div and buttons to the list block "append" allows multiple items to be added
 
   ul.appendChild(li); // adding the list and its parts to the UL
   //   console.log(ul);
 
-  document.querySelector("h5").style.display = "block";
+//   document.querySelector("h5").style.display = "block";
 }
 
 function removeItem() {
-  this.parentElement.remove();
+    let deleteCheck = confirm("Delete Item???");
+    if (deleteCheck) {
+        this.parentElement.remove();
+    }
+
 }
 
 let state = true;
