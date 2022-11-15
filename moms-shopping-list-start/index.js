@@ -15,13 +15,16 @@ function addLi(e) {
   const li = document.createElement("li");
   editBtn = document.createElement("button"); // create button for list item
   const liDiv = document.createElement("input"); //create div inside list item
+    liDiv.style.outline = 'none';
+    liDiv.style.border = 'none';
+
 
   liDiv.style.display = "block";
   liDiv.setAttribute("readonly", "true");
 
   liDiv.value = document.querySelector(".input").value; //add user inout to div
   liDiv.setAttribute("class", "item");
-//   console.log(liDiv.textContent);
+
 
   editBtn.setAttribute("class", "edit-btn");
   editBtn.textContent = "Edit item"; // name the button
@@ -35,12 +38,13 @@ function addLi(e) {
   li.append(liDiv, editBtn, delBtn); // add div and buttons to the list block "append" allows multiple items to be added
 
   ul.appendChild(li); // adding the list and its parts to the UL
-  //   console.log(ul);
+  
 
 //   document.querySelector("h5").style.display = "block";
 }
 
 function removeItem() {
+    console.log(this.parentElement);
     let deleteCheck = confirm("Delete Item???");
     if (deleteCheck) {
         this.parentElement.remove();
@@ -50,23 +54,26 @@ function removeItem() {
 
 let state = true;
 
-function editItem() {
-  editBtn.previousElementSibling.removeAttribute("readonly");
-  console.log(editBtn.previousElementSibling);
-  editBtn.previousElementSibling.focus();
-  editBtn.previousElementSibling.style.backgroundColor =
+function editItem(el) {
+    // console.log(this.parentElement);
+    el.previousElementSibling.removeAttribute("readonly");
+    el.previousElementSibling.focus();
+    el.previousElementSibling.style.border = 'thin solid #000'
+    el.previousElementSibling.style.backgroundColor =
     "rgba(250, 160, 160, .4)";
-  editBtn.textContent = "Save item";
-  state = false;
+    editBtn.textContent = "Save item";
+    state = false;
 }
 
-function saveItem() {
-  editBtn.previousElementSibling.setAttribute("readonly", "true");
-  editBtn.previousElementSibling.style.backgroundColor = "";
-  editBtn.textContent = "Edit item";
-  state = true;
+function saveItem(el) {
+    el.previousElementSibling.style.backgroundColor = "";
+    el.previousElementSibling.setAttribute("readonly", "true");
+    el.previousElementSibling.style.border = 'none'
+    el.textContent = "Edit item";
+    state = true;
 }
 
 function toggleEdit() {
-  state ? editItem() : saveItem();
+    // console.log(this.parentElement);
+  state ? editItem(this) : saveItem(this);
 }
