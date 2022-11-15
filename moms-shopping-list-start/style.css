@@ -2,6 +2,10 @@ body {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+#tb-h5 {
+  /* visibility: hidden; */
+}
+
 .title {
   text-align: center;
 }
@@ -27,6 +31,15 @@ body {
   box-sizing: border-box;
 }
 
+ul {
+  padding: 0;
+  margin: 0 auto;
+}
+
+#add-todo {
+  width: 90%;
+  margin: 0 auto;
+}
 .label {
   margin: 10px;
 }
@@ -48,4 +61,8 @@ body {
 #list div {
   margin-bottom: 10px;
   text-align: center;
+}
+
+#list input{
+    margin-bottom: 0.5rem;
 }
