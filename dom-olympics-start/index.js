@@ -1,6 +1,10 @@
 let header = document.querySelector("#header");
 header.classList.add("header");
 
+document.getElementById("input").required = true;
+
+let fname = 'Steve';
+
 let h1 = document.createElement("h1");
 h1.textContent = "Javascript Made This";
 header.append(h1);
@@ -8,7 +12,7 @@ header.append(h1);
 let headerP = document.createElement("p");
 let headerSpan = document.createElement("span");
 headerSpan.classList.add("name");
-headerSpan.textContent = "Steve";
+headerSpan.textContent = fname;
 headerP.textContent = " wrote the javascript";
 headerP.style.fontSize = "1.5rem";
 header.append(headerP);
@@ -40,13 +44,15 @@ let left = document.querySelectorAll(".left");
 let right = document.querySelectorAll(".right");
 
 theme.addEventListener("change", () => {
-  if (theme.value == "theme-one") {
+  if (theme.value == "theme-one" ) {
     for (i = 0; i < left.length; i++) {
       left[i].style.backgroundColor = "burlywood";
     }
     for (i = 0; i < right.length; i++) {
       right[i].style.backgroundColor = "lightblue";
     }
+
+    
   } else if (theme.value == "theme-two") {
     for (i = 0; i < left.length; i++) {
       left[i].style.backgroundColor = "#f08080";
@@ -54,7 +60,9 @@ theme.addEventListener("change", () => {
     for (i = 0; i < right.length; i++) {
       right[i].style.backgroundColor = "#778899";
     }
+   
   }
+  
 });
 
 //Gold
@@ -80,7 +88,7 @@ function leftSide() {
   console.log("left");
   // divMsg.style.alignSelf = "flex-end";
   let divMsgLeft = document.createElement("div");
-    
+  document.getElementById("input").required
   divMsgLeft.textContent = document.getElementById("input").value;
   divMsgLeft.classList.remove("message", "right");
   divMsgLeft.classList.add("message", "left");
