@@ -7,6 +7,9 @@ document.getElementById("add").addEventListener("click", function (e) {
 
 function createDropDown() {
   const dropDown = document.createElement("select");
+  const dropOption = document.createElement("option");
+  dropOption.textContent = "Select color"
+  dropDown.append(dropOption);
   for (let i = 0; i < colors.length; i++) {
     const option = document.createElement("option");
     option.innerHTML = colors[i];
