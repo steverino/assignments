@@ -43,7 +43,7 @@ if (
 	console.log('The Result is: ' + total);
   
 } else {
-  console.log("Please enter on of the options add,sub,mul,div");
+  console.log("Please enter one of the options add,sub,mul,div");
 }
 // if (operation === "add") {
 //   console.log(add(q1, q2));

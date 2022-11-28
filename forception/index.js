@@ -1,13 +1,161 @@
-let people = ["Jon", "Jacob", "Jingle", "Heimer", "Schmidt"]
-let alphabet = "abcdefghijklmnopqrstuvwxyz"
+let people = ["Jon", "Jacob", "Jingle", "Heimer", "Schmidt"];
+let alphabet = "abcdefghijklmnopqrstuvwxyz";
 
+let arr = [];
 
+// join people with a :
 
-for(let i =0;i<people.length;i++){
-    console.log(people[i]);
-    
+// alphabet is broken into items, double quoted, separated with commas
+// iterate each people item and connect alphabet after each item
+
+function forception(people, alphabet) {
+  
+  for (let i = 0; i < people.length; i++) {
+    arr.push(people[i]+':');
+    for (let j = 0; j < alphabet.length; j++) {
+      arr.push(alphabet[j].toUpperCase());
+    }
+  }
+  return arr;
 }
+console.log(forception(people, alphabet));
 
-function forception(people, alphabet){
-    
-}
+
+// Output:
+[
+  "Jon:",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "Jacob:",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "Jingle:",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "Heimer:",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "Schmidt:",
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];

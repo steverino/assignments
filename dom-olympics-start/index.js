@@ -3,7 +3,7 @@ header.classList.add("header");
 
 document.getElementById("input").required = true;
 
-let fname = 'Steve';
+let fname = "Steve";
 
 let h1 = document.createElement("h1");
 h1.textContent = "Javascript Made This";
@@ -44,15 +44,15 @@ let left = document.querySelectorAll(".left");
 let right = document.querySelectorAll(".right");
 
 theme.addEventListener("change", () => {
-  if (theme.value == "theme-one" ) {
+  left = document.querySelectorAll(".left");
+  right = document.querySelectorAll(".right");
+  if (theme.value == "theme-one") {
     for (i = 0; i < left.length; i++) {
       left[i].style.backgroundColor = "burlywood";
     }
     for (i = 0; i < right.length; i++) {
       right[i].style.backgroundColor = "lightblue";
     }
-
-    
   } else if (theme.value == "theme-two") {
     for (i = 0; i < left.length; i++) {
       left[i].style.backgroundColor = "#f08080";
@@ -60,9 +60,7 @@ theme.addEventListener("change", () => {
     for (i = 0; i < right.length; i++) {
       right[i].style.backgroundColor = "#778899";
     }
-   
   }
-  
 });
 
 //Gold
@@ -88,7 +86,7 @@ function leftSide() {
   console.log("left");
   // divMsg.style.alignSelf = "flex-end";
   let divMsgLeft = document.createElement("div");
-  document.getElementById("input").required
+  document.getElementById("input").required;
   divMsgLeft.textContent = document.getElementById("input").value;
   divMsgLeft.classList.remove("message", "right");
   divMsgLeft.classList.add("message", "left");
@@ -103,7 +101,7 @@ function rightSide() {
   console.log("right");
   // divMsg.style.alignSelf = "flex-start";
   let divMsgRight = document.createElement("div");
-  
+
   divMsgRight.textContent = document.getElementById("input").value;
   divMsgRight.classList.remove("message", "left");
   divMsgRight.classList.add("message", "right");
