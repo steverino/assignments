@@ -1,6 +1,6 @@
-var form = document.getElementById("airline-form");
+var form = document.getElementById("airline-form");//mispelled arline
 var submit = document.getElementById("submit");
-// var query = document.querySelector;
+// var query = document.querySelector; not needed
 
 
 function formAlert() {
