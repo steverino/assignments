@@ -61,7 +61,7 @@ walk();
 
 function algo1(randNum) {
   console.log("\x1b[33mA monster!!! What will you do???\x1b[0m");
-  let choice = readline.question('Enter "f" to fight or "r" to flee ');
+  let choice = readline.question('Enter "f" to fight or "r" to run away ');
 
   let decision = Math.floor(Math.random() * 2);
 
@@ -181,6 +181,9 @@ function choose(choice) {
   if (choice === "f") {
     fight();
   } else if (choice === "r") {
+    attack = Math.floor(Math.random() * 3);
+    player.hp = player.hp - attack;
+    console.log(`The monster hits you for ${attack} damage as you flee`);
     flight();
   }
 }
