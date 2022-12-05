@@ -1,7 +1,17 @@
 const readline = require("readline-sync");
 
-let playerName = "";
+// Game intro section ===================================================
 
+let playerName = "";
+let currentHp =  100;
+let inventory = ["MAGA Hat", "U.S. Constitution"];
+
+let player = {
+  name: playerName,
+  hp: currentHp,
+  inv: inventory,
+};
+player.hp = Math.floor(player.hp)
 function greetPlayer() {
   const greeting1 = `"WELCOME TO ZORK!
     
@@ -13,17 +23,35 @@ greetPlayer();
 
 function askPlayerName() {
   playerName = readline.question(
-    "I need a name, before we start. What's your name? "
+    "I need a name, before we start. What's your name? ",
+    (name) => {
+      readline.close();
+    }
   );
-  console.log(`Hi ${playerName} !`);
-//   console.log('\x1b[31mtest\x1b[0m this message'); 
+
+  playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1);
+  console.log(`Hi ${playerName} you currently have ${player.hp} Hit Points!`);
+  player.name = playerName;
+  //   console.log('\x1b[31mtest\x1b[0m this message');
 }
+// console.log(playerName, player.hp);
+
+function playerStats() {
+  let hp = player.hp;
+  let name = player.name;
+  let inv = player.inv;
+  console.log(` Name: ${name}\n Hit Points: ${hp}\n Inventory: ${inv}`);
+}
+playerStats();
+// Game intro end ========================================================
 
 function walk() {
-  let mykey = readline.question('Press "w" to begin walking ');
+  let mykey = readline.question('Press "w" to begin walking or "p" for inventory ');
   if (mykey === "w") {
-    // algo1();
     journey();
+  } else if (mykey === "p") {
+    playerStats();
+    walk();
   } else {
     console.log('A journey of 1000 miles begins with a "w"');
     walk();
@@ -31,38 +59,57 @@ function walk() {
 }
 walk();
 
-function algo1() {
-  let randNum = Math.floor(Math.random() * 10);
-  if (randNum === 1) {
-    // console.log("Monster1");
+function algo1(randNum) {
+  console.log("\x1b[33mA monster!!! What will you do???\x1b[0m");
+  let choice = readline.question('Enter "f" to fight or "r" to flee ');
+
+  let decision = Math.floor(Math.random() * 2);
+
+  if (randNum === 1 && choice === "f") {
     monster1();
-  } else if (randNum === 2) {
-    // console.log("Monster2");
+  } else if (randNum === 2 && choice === "f") {
     monster2();
-  } else if (randNum === 3) {
-    // console.log("Monster3");
+  } else if (randNum === 3 && choice === "f") {
     monster3();
+  } else if (decision === 1) {
+    monster1();
   } else {
-    journey();
+    console.log("You try to escape");
+    choose("r");
   }
 }
 
 function monster1() {
-  let m1Hp = 20;
-  console.log("You are attacked by a \x1B[31mbunny\x1b[0m");
-  return monsterAttack("bunny");
+  let monster = {
+    name: "bunny",
+    hp: 20,
+    inv: ["rabbits foot", "jalepeno pepper"],
+  };
+
+  console.log(`You are attacked by a \x1B[31m${monster.name}\x1b[0m`);
+  monsterAttack(monster);
 }
 
 function monster2() {
-  let m2Hp = 30;
-  console.log("You are attacked by a \x1B[31mgopher\x1b[0m");
-  return monsterAttack("gopher");
+  let monster = {
+    name: "gopher",
+    hp: 30,
+    inv: ["golf ball", "can of beer"],
+  };
+
+  console.log(`You are attacked by a \x1B[31m${monster.name}\x1b[0m`);
+  monsterAttack(monster);
 }
 
 function monster3() {
-  let m3Hp = 50;
-  console.log("You are attacked by a \x1B[31mlemming\x1b[0m");
-  return monsterAttack("lemming");
+  let monster = {
+    name: "lemming",
+    hp: 50,
+    inv: ["bloody ice skate", "soldering iron"],
+  };
+
+  console.log(`You are attacked by a \x1B[31m${monster.name}\x1b[0m`);
+  monsterAttack(monster);
 }
 
 function journey() {
@@ -74,8 +121,8 @@ function journey() {
   const randomPath = Math.floor(Math.random() * paths.length);
   console.log(paths[randomPath]);
   let randNum = Math.floor(Math.random() * 10);
-  if (randNum === 3 || randNum === 6 || randNum === 9) {
-    algo1();
+  if (randNum === 1 || randNum === 2 || randNum === 3) {
+    algo1(randNum);
   } else {
     walk();
   }
@@ -83,20 +130,99 @@ function journey() {
 
 function monsterAttack(monster) {
   attack = Math.floor(Math.random() * 10);
-
-  if (monster === "bunny") {
+  if (monster.name === "bunny") {
     console.log(`You take \x1b[31m${attack * 1}\x1b[0m damage`);
+    player.hp = player.hp - attack * 1;
+    player.hp = Math.floor(player.hp);
+    console.log(`You have ${player.hp} Hit Points`);
+    if (player.hp < 1) {
+      death();
+    }
     playerAttack(monster);
-  } else if (monster === "gopher") {
+  } else if (monster.name === "gopher") {
     console.log(`You take \x1b[31m${attack * 2}\x1b[0m damage`);
+    player.hp = player.hp - attack * 1.25;
+    player.hp = Math.floor(player.hp);
+    console.log(`You have ${player.hp} Hit Points`);
+    if (player.hp < 1) {
+      death();
+    }
     playerAttack(monster);
   } else {
     console.log(`You take \x1b[31m${attack * 3}\x1b[0m damage`);
+    player.hp = player.hp - attack * 1.3;
+    player.hp = Math.floor(player.hp);
+    console.log(`You have ${player.hp} Hit Points`);
+    if (player.hp < 1) {
+      death();
+    }
     playerAttack(monster);
   }
 }
 
 function playerAttack(monster) {
   attack = Math.floor(Math.random() * 10);
-  console.log(`${playerName} attcks the \x1b[31m${monster}\x1b[0m and does ${attack} damage`);
+  monster.hp = monster.hp - attack;
+  if (monster.hp <= 0) {
+    console.log(`You have slaughtered the ${monster.name}`);
+    reward(monster);
+    journey();
+  }
+  while (monster.hp > 0) {
+    console.log(
+      `${playerName} attacks the \x1b[31m${monster.name}\x1b[0m and does ${attack} damage`
+    );
+    console.log(`Monster has ${monster.hp}`);
+    monsterAttack(monster);
+  }
+}
+
+function choose(choice) {
+  if (choice === "f") {
+    fight();
+  } else if (choice === "r") {
+    flight();
+  }
+}
+
+function fight() {
+  let weapon = "Sword";
+  //
+  playerAttack(monster);
+}
+
+function flight() {
+  console.log(
+    `\x1b[33mThe site of the MONSTER-VAR makes you wet your pants and you run away.\x1b[0m]`
+  );
+  journey();
+}
+
+function reward(monster) {
+  if (monster.name === "bunny") {
+    player.inv.push(...monster.inv);
+    console.log(`The ${monster.name} dropped ${monster.inv}`);
+    console.log(`You have ${player.inv}`);
+  } else if (monster.name === "gopher") {
+    player.inv.push(...monster.inv);
+    console.log(`The ${monster.name} dropped ${monster.inv}`);
+    console.log(`You have ${player.inv}`);
+  } else if (monster.name === "lemming") {
+    player.inv.push(...monster.inv);
+    console.log(`The ${monster.name} dropped ${monster.inv}`);
+    console.log(`You have ${player.inv}`);
+  }
+}
+
+function death() {
+  console.log("You have died. Embrace the peace of death");
+
+  restart();
+}
+
+function restart() {
+  player.name = "";
+  player.hp = 100;
+  player.inv = "";
+  greetPlayer();
 }
