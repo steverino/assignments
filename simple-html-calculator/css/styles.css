@@ -1,0 +1,83 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    border: solid 1px red;
+    
+}
+
+#equations {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 25%;
+    border: solid 1px blue;
+    
+}
+
+#equations span {
+    padding: 0 0.5rem;
+    margin: 0;
+    
+}
+
+#equations button {
+    margin-left: 0.5rem;
+}
+
+
+#add{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 1rem;
+    
+}
+
+#subtract{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 1rem;
+    
+    
+}
+
+#subtract span {
+    margin-right: 2px;
+}
+
+#multiply {
+    display: flex;
+    justify-content: start;
+    
+}
+
+#multiply span {
+    margin-right: 1px;
+}
+
+#results {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px green;
+}
+
+#sum {
+    padding-bottom: 1rem;
+}
+
+#difference{
+    padding-bottom: 1rem;
+    
+}
+
+#product{
+    
+}
