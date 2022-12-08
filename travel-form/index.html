@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/app.js" defer></script>
+    <title>Travel Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <form name="travel-form">
+        <section class="section">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" id="first-name" />
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" id="last-name" />
+          <label for="age">Age</label>
+          <input type="number" name="age" id="age" />
+        </section>
+        <section class="section">
+          <label for="gender">Male</label>
+          <input type="radio" name="gender" id="male" value="male" />
+          <label for="">Female</label>
+          <input type="radio" name="gender" id="female" value="female" />
+        </section>
+        <section class="section">
+          <select name="location" id="location">
+            <option value="">Choose Destination</option>
+            <option value="Pulaski, Tennessee">Pulaski, Tennessee</option>
+            <option value="Brandon, Mississippi">Brandon, Mississippi</option>
+            <option value="Pork Bend, Utah">Pork Bend, Utah</option>
+            <option value="Wampum, Pennsylvania">Wampum, Pennsylvania</option>
+          </select>
+        </section>
+        <section class="section">
+          <label for="">Meal 1</label>
+          <input type="checkbox" name="meal" id="meal1" value="meal1" />
+          <label for="">Meal 2</label>
+          <input type="checkbox" name="meal" id="meal2" value="meal2" />
+          <label for="">Meal 3</label>
+          <input type="checkbox" name="meal" id="meal3" value="meal3" />
+        </section>
+        <button id="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>  
