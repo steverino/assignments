@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    
+
+}
+
+#numCaught{
+        
+width: 4rem;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    margin: 1rem;
+    padding: 1rem;       
+    width: 300px;
+    height: 400px;
+    border: 1px solid #000;
+}
+ 
