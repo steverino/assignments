@@ -1,7 +1,11 @@
 body {
   margin: 0;
   padding: 0;
+ 
+  
 }
+
+
 
 h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -9,9 +13,9 @@ h1 {
 }
 
 footer {
-    border-top: #000 solid 1px;
-    margin-top: 1rem;
-    width: 100%;
+  border-top: #000 solid 1px;
+  margin-top: 1rem;
+  width: 100%;
 }
 
 #numCaught {
@@ -23,6 +27,11 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: antiquewhite;
+  background-image:url(/images/christmas2.jpg);
+  background-size: cover; 
+  
+  
 }
 
 .cards {
@@ -31,37 +40,63 @@ footer {
 }
 
 .card {
+  text-align: center;
   margin: 1rem;
   padding: 1rem;
   width: 300px;
   height: 400px;
-  border: 1px solid #000;
+  border: 1px solid #ddd;
+  background-color: rgba(0, 50, 109, 0.75);
+
 }
 
 .card h2 {
-    text-align: center;
+  text-align: center;
+}
+
+.card img {
+  border: 2px solid red;
+  width: 90%;
+}
+
+.info{
+    font-size: larger;
 }
 
 @media (max-width: 1050px) {
-  h1{
+  h1 {
     font-size: 2rem;
   }
-  
-    .cards {
+
+  .cards {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: aqua;
+    
   }
 }
 
+.counter{
+    margin-top: 0.5rem;
+}
+
+.totals {
+    width: 50%;
+    padding: 1rem;
+    background-color: rgba(0, 50, 109, 0.75);
+    text-align: center;
+    font-size: 1.5rem;
+    border: #ddd solid 2px;
+}
+
+
 @media (max-width: 360px) {
-    .card {
-        margin: 1rem;
-        padding: 1rem;
-        width: 250px;
-        height: 250px;
-        border: 1px solid #000;
-      }   
+  .card {
+    margin: 1rem;
+    padding: 1rem;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #000;
+  }
 }

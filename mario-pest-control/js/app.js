@@ -8,19 +8,19 @@ let baddies = [
   {
     id: 0,
     baddieName: "Goombas",
-    baddieImage: "Image",
+    baddieImage: './images/Jingle_Bells.webp',
     baddiePrice: 5,
   },
   {
     id: 1,
     baddieName: "Bob-ombs",
-    baddieImage: "Image",
+    baddieImage: './images/heatMiser.jpg',
     baddiePrice: 7,
   },
   {
     id: 2,
     baddieName: "Cheep-cheeps",
-    baddieImage: "Image",
+    baddieImage: './images/SnowMiser.webp',
     baddiePrice: 11,
   },
 //   {
@@ -53,16 +53,24 @@ function showCard() {
     <!-- Card for individual Baddie -->
     <div class="card">
     <div class="bad-name"><h2> ${baddies[i].baddieName} </h2></div>
-    <div class="bad-pic">${baddies[i].baddieImage}</div>
+    <div class="bad-pic">
+      <img src="${baddies[i].baddieImage}"/>
+    </div>
+    <div class="info">
     <div class="bad-price">Bounty: ${baddies[i].baddiePrice} coins</div>
     <div class="bad-caught">
     Individual Pests Caught:<span id="pestTotal${[
       i,
-    ]}">0</span> Ind Price Total: $ <span id="unitTotal${[i]}">0</span>
+    ]}">0</span>
     </div>
-    
+    <div class="bad-price">
+    Ind Price Total: $ <span id="unitTotal${[i]}">0</span>
+    </div>
+    </div>
+    <div class="counter">
     <input type="number" name="numCaught" id="numCaught${baddies[i].id}" />
     <button id="addPests${baddies[i].id}">Add Pests</button>
+    </div>
     </div>
     <!-- Card end-->    
     `;
