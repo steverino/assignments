@@ -9,8 +9,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    border: solid 1px red;
+    background-color: hsl(0, 0%, 90%);
+    border: solid 3px red;
     
 }
 
@@ -18,7 +18,7 @@ body{
     margin-bottom: 2rem;
     padding: 1rem;
     width: 25%;
-    border: solid 1px blue;
+    border: solid 3px blue;
     
 }
 
@@ -26,6 +26,10 @@ body{
     padding: 0 0.5rem;
     margin: 0;
     
+}
+
+#equations input {
+    border: solid 3px green;
 }
 
 #equations button {
@@ -66,18 +70,9 @@ body{
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    border: solid 1px green;
+    border: solid 2px yellow;
 }
 
-#sum {
+.result {
     padding-bottom: 1rem;
-}
-
-#difference{
-    padding-bottom: 1rem;
-    
-}
-
-#product{
-    
 }

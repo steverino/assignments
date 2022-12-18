@@ -17,9 +17,9 @@ function login(username, password) {
     try {
     if (username !== "sam" || password !== "123abc") {
       if(username !== "sam"){
-        errmsg = 'username'
+        errmsg = 'username wrong'
       }else if(password !== "123abc"){
-        errmsg = 'password'
+        errmsg = 'password wrong'
       }
         throw new Error(`${errmsg} doesn't match`);
     } 
