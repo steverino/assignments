@@ -1,0 +1,109 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    height: 100vh;
+    
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    
+    border: solid 1px red;
+    
+}
+
+.boxes{
+    height: 50%;
+    width: 2000px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #eee;
+    border: #060 solid 2px;
+
+}
+
+#box1 {
+    background-color: aliceblue;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+#box1:hover {
+    background-color: antiquewhite;
+    border-width: 5px;
+    border-radius: 55px;
+}
+
+#box2 {
+    border-color: aqua;
+    border-style: dashed;
+    box-shadow: 5px 10px #600;
+}
+
+#box2:hover {
+    border-color:aquamarine;
+    border-style: solid;
+    box-shadow: 5px 10px #060;
+}
+
+#box3 {
+    border-style:hidden;
+    box-shadow: inset 5px 10px #00c;
+    width: 100px;
+}
+
+#box3:hover {
+    border-style: double;
+    box-shadow: 5px 10px #00c;
+    width: 200px;
+}
+
+#box4 {
+    box-shadow: 2px 12px #00c;
+    width: 100px;
+    height: 100px;
+}
+
+#box4:hover {
+    box-shadow: 12px 2px #0c0;
+    width: 50px;
+    height: 200px;
+}
+
+#box5 {
+    
+    width: 150px;
+    height: 200px;
+    padding:30px 15px 2px 4px
+}
+
+#box5:hover {
+    width: 100px;
+    height: 100px;
+    padding:50px 45px 20px 40;
+    
+}
+
+#box6 {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+#box6:hover {
+    position:relative;
+    left: 10px;
+    top: -10px;
+    background-color: #00c;
+}
+
+.box {
+  border: solid 2px #000;
+  width: 100px;
+  height: 100px;
+}

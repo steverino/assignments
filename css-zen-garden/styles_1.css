@@ -1,0 +1,122 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+#header1 {
+    
+    /* background-image:  url(/images/contours-opaque.png), url(/images/gridlines-opaque.png);
+    background-attachment: scroll, scroll;
+    background-repeat: repeat, repeat;
+    background-size: auto, auto;  */
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+}
+
+#header1 h1{
+
+    font-family: 'Times New Roman', Times, serif;
+    /* @font-face {
+        
+        /* font-family: 'Libre Baskerville', sans-serif;
+        src: url('/fonts/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsX.woff2') format('woff2'); */
+    /* } */
+}
+
+#header2 {
+  background-color: transparent;
+}
+
+#box3 {
+  background-color: hsl(0, 0%, 100%);
+  padding: 3rem 7rem 3rem 14rem;
+}
+
+#box4 {
+  background-color: hsl(142.5, 18.18%, 91.37%);
+  
+}
+
+#box5 {
+  background-color: hsla(145, 27%, 64%,0.3);
+  padding: 3rem 7rem 3rem 14rem;
+  /* grid-column: 1 / 9; */
+}
+
+#box6 {
+  background-color: hsla(145, 27%, 64%, 0.3);
+}
+
+#box7{
+    background-color: hsl(0, 0%, 100%);
+    padding: 3rem 7rem 3rem 14rem;
+
+}
+
+#box8{
+    background-color: hsl(142.5, 18.18%, 91.37%);
+}
+
+.container {
+
+  background-image: url(/images/contours-opaque.png), url(/images/gridlines-opaque.png),url(/images/bamboo.png),url(/images/huntington.jpg);
+  background-attachment: scroll, scroll, fixed, scroll;
+  background-repeat: repeat, repeat, repeat, no-repeat;
+  background-size: auto, auto, cover, 100% 30%;  
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 20% auto;
+  height: 100vh;
+  /* border: solid 1px #f00; */
+}
+
+.column1 {
+  grid-column: 1 / 9;
+}
+
+.column2 {
+  grid-column: 9 / 13;
+}
+
+.bottom {
+  grid-column: 1 / -1;
+}
+
+.footer {
+  grid-column: 1 / -1;
+}
+
+.box {
+  border: solid 1px #0f0;
+  /* border: #f00 solid 2px; */
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-rows: auto;
+    background-color: green;
+  }
+
+  .box {
+    grid-column: 1/-1;
+  }
+
+  #box4 {
+    position: relative;
+    grid-row-end: 9;
+    background-color: #f00;
+    top: 0;
+    left: 0;
+  }
+  #box6 {
+    grid-row-end: 10;
+  }
+  #box8 {
+    grid-row-end: 11;
+  }
+}
