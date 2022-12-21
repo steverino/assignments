@@ -4,15 +4,21 @@ body {
   font-family: "Libre Baskerville", serif;
 }
 
+ul {
+    list-style: none;
+}
+
+
+
 .box {
   border: solid #f00 1px;
 }
 
 .container {
   display: grid;
-  height: 1500px;
+  height: 1800px;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 20% auto auto auto 20% 10%;
+  grid-template-rows: 15% auto auto auto 15% 10%;
   background-image: url(./images/contours.png), url(./images/gridlines.png),
     url(./images/huntington.jpg), url(./images/bamboo.png);
   background-repeat: repeat, repeat, no-repeat, no-repeat;
@@ -21,11 +27,22 @@ body {
   background-position: top, top, top, bottom;
 }
 
+.container h3 {
+    font-family: "Julius Sans One", sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+}
+
 #header1 {
   display: grid;
   justify-content: center;
   align-content: center;
   grid-column: 1/9;
+
+}
+
+.logo img{
+    width: 100px;
 }
 
 #header1 h1 {
@@ -34,6 +51,7 @@ body {
   font-size: 3rem;
   font-weight: 100;
   font-family: "Julius Sans One", sans-serif;
+ 
 }
 
 #header1 p {
@@ -84,11 +102,42 @@ body {
   grid-column: 1/9;
   background-color: hsl(0, 0%, 100%);
   padding: 3rem 7rem 3rem 14rem;
+
+}
+
+#box3 h3{
+    
 }
 
 #box4 {
   grid-column: 9/13;
   background-color: hsl(142.5, 18.18%, 91.37%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+}
+
+#box4 ul{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+#box4 li{
+    
+    font-size: 1.2rem;
+    font-weight: 100;
+    font-family: "Julius Sans One", sans-serif;
+}
+
+#box4 li div{
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    font-size: 1rem;
+    border-bottom: 1px solid hsla(0, 0%, 20%, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem ;
 }
 
 #box5 {
