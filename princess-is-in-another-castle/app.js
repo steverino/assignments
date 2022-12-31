@@ -23,7 +23,7 @@ class Player {
       this.status = "big";
     }
     // console.log('Got Hit!!!: ' + this.status);
-    this.print();
+    // this.print();
   }
 
   gotPowerup() {
@@ -35,12 +35,12 @@ class Player {
       this.hasStar = true;
     }
     // console.log("Powered Up: " + this.status);
-    this.print();
+    // this.print();
   }
 
   addCoin() {
     this.totalCoins++;
-    this.print();
+    // this.print();
   }
 
   print() {
@@ -53,28 +53,35 @@ class Player {
 
 function getRandom(min,max) {
   
-  while (setName.status != "dead"){
-    
-    let random  = Math.floor(Math.random() * (2 - 0 + 1)) + 0;
-      
-      if (random == 0) {
+  // while (setName.status != "dead"){
+     let random  = Math.floor(Math.random() * (max - min + 1)) + min;
+    if (random == 0) {
         setName.gotHit();
       } else if (random == 1) {
         setName.gotPowerup();
       } else if (random == 2) {
         setName.addCoin();
       }
+      setName.print();
+    // }
+ }
+  
+  function num(){
+    min=0
+    max=2
+    let random  = Math.floor(Math.random() * (max - min + 1)) + min;
+    return random
     
   }
+  console.log(setInterval(function(){num()}) );
+  // setInterval(num,1000);
   
-}
+  setName = new Player(setName(), 0, "small", false);
 
-
-setName = new Player(setName(), 0, "small", false);
-  getRandom(0,2)
-
-
-
-// const mario = new Player("Mario", 0, "small", false);
+  getRandom(0,2);
+  
+  
+  
+  // const mario = new Player("Mario", 0, "small", false);
 // const luigi = new Player("Luigi", 0, "small", false);
 
