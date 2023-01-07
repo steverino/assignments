@@ -1,7 +1,7 @@
 document.querySelector('h1').textContent  = "Mario Pest Control"
-document.querySelector('.email').textContent  = "mario@mariopestcontrol.com"
-document.querySelector('.phone').textContent  = "(123)555-1212"
-document.querySelector('.address').textContent  = "123 Main Street"
+document.querySelector('.email').textContent  = "Email: mario@mariopestcontrol.com"
+document.querySelector('.phone').textContent  = "Phone: (123)555-1212"
+document.querySelector('.address').textContent  = "Address: 123 Main Street"
 
 
 let baddies = [

@@ -1,11 +1,7 @@
 body {
   margin: 0;
   padding: 0;
- 
-  
 }
-
-
 
 h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -16,6 +12,17 @@ footer {
   border-top: #000 solid 1px;
   margin-top: 1rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: antiquewhite;
+  background-color: black;
+  font-size: large;
+}
+
+footer ul{
+  list-style: none;
 }
 
 #numCaught {
@@ -29,9 +36,7 @@ footer {
   flex-direction: column;
   color: antiquewhite;
   background-image:url(/images/christmas2.jpg);
-  background-size: cover; 
-  
-  
+  background-size: cover;   
 }
 
 .cards {
