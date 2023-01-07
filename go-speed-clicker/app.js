@@ -6,7 +6,7 @@ page.addEventListener('click', clickLog)// adds clickability to container elemen
 let intervalID = setInterval(clickReset, 5000) // fires reset after 5 seconds
 
 number = localStorage.clicks; // sets localstorage to number of clicks
-document.querySelector('.number').textContent =  localStorage.clicks // places local storage key in number container
+// document.querySelector('.number').textContent =  localStorage.clicks // places local storage key in number container
 function clickLog(){
     document.querySelector('.number').textContent =  number; // takes number from above and places it in number container
     localStorage.setItem("clicks", number++) // adds one to the number variable
