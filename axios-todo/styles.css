@@ -1,3 +1,8 @@
 ul {
     list-style: none;
 }
+
+.hide-btn {
+    visibility: hidden;
+    display: none;
+}
