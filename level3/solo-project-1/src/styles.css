@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+  padding: 2rem 10rem;
+  border: 1px solid #f00;
+}
+
+.wrapper {
+  width: 317px;
+}
+
+.photo {
+  height: 399px;
+
+  margin: auto;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid #00f;
+}
+
+.info--container {
+  padding: 1rem 2rem;
+  border: 1px solid #fb0;
+}
+
+.info--container > h2,
+p,
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 115px;
+}
+
+.footer--nav {
+  border-radius: 0 0 10px 10px;
+  border: 1px solid #0f0;
+}
+
+.footer--nav ul {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 70%;
+  border: 1px solid #060;
+}
