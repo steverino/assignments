@@ -1,32 +1,22 @@
+import About from './About'
+import Interests from './Interests'
+
+
 export default function Info() {
   return (
     <main className="info--container">
-      <h2>First Last</h2>
-      <p>Job Title</p>
-      <p>stevefalvo.com</p>
+      <h2>Steve Falvo</h2>
+      <p>Web Development Student</p>
+      <p><a href="https://stevefalvo.com" target="_blank"> stevefalvo.com</a></p>
       <div className="buttons">
-        <button>Email</button>
-        <button>LinkedIn</button>
+        <button className='email-btn'>Email</button>
+        <button className='linkedin-btn'>LinkedIn</button>
       </div>
 
       <section>
-        <article>
-          <h3>About</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Consequatur natus sequi dolorum quisquam consectetur eaque? Autem
-            eligendi, voluptate, mollitia natus similique facere numquam earum
-            enim quod commodi molestias deleniti repellendus?
-          </p>
-        </article>
-        <article>
-          <h3>Interests</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
-            consequatur natus quae esse facilis numquam ducimus rem quaerat nam,
-            corrupti quos adipisci, nobis eius odit, hic a quam cum culpa.
-          </p>
-        </article>
+       <About/>
+       <Interests/>
+       
       </section>
     </main>
   );

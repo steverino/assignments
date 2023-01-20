@@ -1,7 +1,7 @@
 export default function Image() {
   return (
     <div className="photo">
-      <img src="./images/photo.jpg" alt="" />
+      <img src="./heatMiser.jpg" alt="" />
     </div>
   );
 }
