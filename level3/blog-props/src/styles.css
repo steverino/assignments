@@ -13,11 +13,11 @@ ul{
     list-style: none;
 }
 
-.container {
-    /* display: flex;
+/* .container {
+    display: flex;
     flex-direction: column;
-    justify-content: center; */
-}
+    justify-content: center;
+} */
 
 .hero {
   display: flex;
