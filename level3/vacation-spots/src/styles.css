@@ -1,0 +1,11 @@
+.wrapper {
+    border: 1px solid #0f0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card{
+    border: 1px solid #f00;
+    padding: 1rem;
+    width: 25%;
+}
