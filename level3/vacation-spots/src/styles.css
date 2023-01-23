@@ -8,7 +8,9 @@ body {
     /* border: 1px solid #0f0; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background-color:lightsteelblue
+    background-color:lightsteelblue;
+    text-align: center;
+    
 }
 
 .card{
@@ -18,7 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    width: 25%;
+    width: 35%;
     color: aliceblue;
     box-shadow: 10px 5px 5px #777;
 }
@@ -46,6 +48,8 @@ body {
 .card-list {
     display: flex;
     margin: 1rem;
+    /* border: solid 1px #00f; */
+    justify-content: center;
     
 }
 
