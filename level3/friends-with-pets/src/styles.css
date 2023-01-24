@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 1rem;
+  /* border: solid 1px #0f0; */
+}
+
+.header {
+  display: flex;
+  height: 30%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.friend-list {
+  border: outset 3px #000;
+  width: 50%;
+  border-radius: 10px;
+  padding: 0 10px;
+  box-shadow: 10px 5px 5px #777;
+  margin-bottom: 1rem;
+}
+
+.pets {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.pet {
+    padding: 0.2rem 0.5rem;
+    background-color: #eee;
+    border-radius: 10px;
+    margin-bottom: 0.25rem;
+    border: inset 2px #aaa;
+    /* border: solid 1px #00f; */
+}
+/* .pet--name {
+    
+    text-transform: lowercase;
+}
+.pet--name::first-letter {
+    text-transform: uppercase;
+  } */
