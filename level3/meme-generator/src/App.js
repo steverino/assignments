@@ -4,11 +4,9 @@ import Meme from "./components/Meme";
 
 export default function App() {
   return (
-    <div className="container">
-      <div className="wrapper">
-        <Header />
-        <Meme />
-      </div>
+    <div>
+      <Header />
+      <Meme />
     </div>
   );
 }
