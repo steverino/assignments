@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #0f0;
+  height: 100vh;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 35%;
+  gap: 0.5rem;
+  border: 2px solid #f00;
+}
+
+.box {
+  width: 100%;
+  padding-top: 100%;
+}
+
+.box1 {
+  border: 1px solid #000;
+}
+.box2 {
+  border: 1px solid #000;
+}
+.box3 {
+  border: 1px solid #000;
+}
+.box4 {
+  border: 1px solid #000;
+}

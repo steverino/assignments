@@ -9,8 +9,18 @@ export default function Meme() {
      * Log the URL of the image to the console. (Don't worry
      * about displaying the image yet)
      */
+let images = memesData.data.memes;
+
+function randomImage(){
+    let randImg = images[Math.floor(Math.random()*images.length)]
+    console.log( randImg.url);
+    return (randImg.url)
+}
+    
+     
     return (
         <main>
+            {randomImage() }
             <div className="form">
                 <input 
                     type="text"
@@ -24,6 +34,7 @@ export default function Meme() {
                 />
                 <button 
                     className="form--button"
+                    onClick={randomImage}
                 >
                     Get a new meme image 🖼
                 </button>
