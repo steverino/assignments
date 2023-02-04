@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Box4 = () => {
+const Box4 = (props) => {
   return (
-    <div className='box4 box'>Box4</div>
+    <div className={`box1 box ${props.color}`}>{props.color}</div>
   )
 }
 

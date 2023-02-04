@@ -8,18 +8,37 @@ import Box4 from "./Box4";
 
 
 const Boxes = () => {
-    function SwitchColor() {
-      const [color, setColor] = useState("white");
+  // const colors = ["white", "white", "white", "white"]
+  const [colors, setColors] = React.useState(["white", "white", "white", "white"])
+
+  function switchBW(){
+    let newColors = []
+    colors.map((color)=>{
+    if(color === 'black'){
+      newColors = ['black','white','white','white']
+      setColors(newColors)
+      
+          
+    }else if(color === 'white'){
+      newColors = ['white','black','black','black']
+      setColors(newColors)
+      
     }
+    return newColors
+  })
+        
+
+  }
+
   return (
     <div className="wrapper">
-      <Box1 />
-      <Box2 />
-      <Box3 />
-      <Box4 />
+      <Box1 color={colors[0]} />
+      <Box2 color={colors[1]}/>
+      <Box3 color={colors[2]}/>
+      <Box4 color={colors[3]}/>
       <button
         type="button"
-        onClick={() => SwitchColor("black")}
+        onClick={switchBW}
       >Change</button>
     </div>
   );
