@@ -1,19 +1,25 @@
-import React from 'react'
-import Die from './Die'
-import Random from './Random'
+import React from "react";
+
+import Random from "./Random";
 
 const DiceBox = () => {
-  return (
-    <div>DiceBox
-        <Random/>
-        <Random/>
-        <Random/>
-        <Random/>
-        <Random/>
+    const reloadClick = () => {
+        window.location.reload();
         
-        
-    </div>
-  )
-}
+      };
 
-export default DiceBox
+      
+  return (
+    <div className="dice-box">
+      
+      <Random />
+      <Random />
+      <Random />
+      <Random />
+      <Random />
+      <button onClick={reloadClick}>Re-roll All dice</button>
+    </div>
+  );
+};
+
+export default DiceBox;

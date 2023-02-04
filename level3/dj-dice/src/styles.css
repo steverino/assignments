@@ -1,5 +1,31 @@
 .die{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50px;
     height: 50px;
+    font-size: 2rem;
+    font-weight: 600;
     border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.dice-box {
+    width: 75%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.random {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    
+}
+
+.random button {
+    margin-top: 0.5rem;
 }

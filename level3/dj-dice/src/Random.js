@@ -11,7 +11,7 @@ const Random = () => {
   };
 
   return (
-    <div>
+    <div className="random">
       <Die random={nums}/>
       
       <button onClick={changeNum}>Roll</button>
