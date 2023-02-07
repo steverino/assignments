@@ -1,15 +1,24 @@
-import React from 'react'
-
+import React from "react";
 
 const Die = (props) => {
-    
-  return (
-    <div className='die'>
-        {props.random}
-        
-    </div>
-    
-  )
-}
 
-export default Die
+  const [nums, setNums] = React.useState(0);
+  const changeNum = () => {
+    let rand = Math.floor(Math.random() * 6 + 1);
+    setNums(rand);
+  };
+  
+  
+  return (
+    <div>
+      
+      <div className={`die`} onClick={()=>props.reloadClick()}>{nums} </div>
+
+      <button className={`rollBtn `} onClick={changeNum}>
+        Roll
+      </button>
+    </div>
+  );
+};
+
+export default Die;
