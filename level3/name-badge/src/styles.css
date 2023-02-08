@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.badge--header{
+    margin: 0;
+    background-color: #606060;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    color: white;
+}
+
+.badge--content {
+    margin: 1rem;
+    border: solid 1px #000;
+    border-radius: 5px;
+}
