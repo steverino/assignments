@@ -8,14 +8,26 @@ ul{
 
 .info{
     display: flex;
+
+}
+.info--form{
+    display: flex;
     flex-direction: column;
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: solid 1px #000;
+}
+
+.info--badge{
+    width: 50%;
 }
 
 .badge--header{
     margin: 0;
     background-color: #606060;
     padding: 0.25rem 0.5rem;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     color: white;
 }
 

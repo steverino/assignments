@@ -1,12 +1,13 @@
 import React from "react";
 import Info from "./components/Info";
-import Badge from "./components/Badge";
+
+import BadgeList from './components/BadgeList';
 
 export default function App() {
     return(
         <>
         <Info/>
-        <Badge/>
+        <BadgeList/>        
         </>
     )
 }
