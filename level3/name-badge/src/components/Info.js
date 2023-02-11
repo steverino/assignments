@@ -7,7 +7,7 @@ const Info = () => {
   useTitle("Information");
 
   const [formData, setFormData] = React.useState({
-    
+    id: "",
     firstName: "",
     lastName: "",
     email: "",
@@ -27,25 +27,51 @@ const Info = () => {
   }
 
   const [list, setList] = React.useState([]);
-  
+const [num, setNum] = React.useState(1)
   function handleClick() {
-    
+    setNum((number)=>{
+      return number + 1
+    })
+
+
     setList((prevList) => {
+      
       return [
-        ...prevList, 
+        ...prevList,
+
         <Badge
-            firstName={formData.firstName}
-            lastName={formData.lastName}
-            email={formData.email}
-            birthPlace={formData.birthPlace}
-            phone={formData.phone}
-            favFood={formData.favFood}
-            skills={formData.skills}
-          />
-        
-        ];
+          id={num}
+          firstName={formData.firstName}
+          lastName={formData.lastName}
+          email={formData.email}
+          birthPlace={formData.birthPlace}
+          phone={formData.phone}
+          favFood={formData.favFood}
+          skills={formData.skills}
+        />,
+      ];
     });
   }
+  const [isButtonDisabled, setIsButtonDisabled] = React.useState(true);
+  React.useEffect(() => {
+    if (
+      formData.firstName.length < 3 ||
+      formData.lastName.length < 3 ||
+      formData.email.length < 3 ||
+      formData.birthPlace.length < 2 ||
+      formData.phone.length === 9
+    ) {
+      setIsButtonDisabled(true);
+    } else {
+      setIsButtonDisabled(false);
+    }
+  }, [
+    formData.firstName.length,
+    formData.lastName.length,
+    formData.email.length,
+    formData.birthPlace.length,
+    formData.phone.length,
+  ]);
 
   return (
     <div>
@@ -58,6 +84,7 @@ const Info = () => {
             id="firstName"
             onChange={handleChange}
             value={formData.firstName}
+            minLength={3}
           />
           <label htmlFor="lastName">Last Name</label>
           <input
@@ -85,7 +112,7 @@ const Info = () => {
           />
           <label htmlFor="phone">Phone</label>
           <input
-            type="text"
+            type="number"
             name="phone"
             id="phone"
             onChange={handleChange}
@@ -108,7 +135,11 @@ const Info = () => {
             onChange={handleChange}
             value={formData.skills}
           ></textarea>
-          <button type="button" onClick={() => handleClick()}>
+          <button
+            type="button"
+            onClick={() => handleClick()}
+            disabled={isButtonDisabled}
+          >
             Submit
           </button>
         </form>
@@ -127,9 +158,14 @@ const Info = () => {
       </div>
       {/* end info */}
       <ul>
-        {list.map((item, index)=>{
-          return <li key={index}>{item}</li>
-        })}  
+        {list.map((item, index) => {
+                    
+          return (
+            <li key={index}>
+              {item} 
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

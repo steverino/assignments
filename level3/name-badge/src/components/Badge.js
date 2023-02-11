@@ -3,11 +3,16 @@ import { useTitle } from "./Title";
 
 const Badge = (props) => {
   useTitle("Badge");
-
+  let bgColor;
+  if(props.id % 2 === 0){
+    bgColor = '#a00'
+  }else{
+    bgColor = '#006040'
+  }
   return (
     <div>
       <section className="badge--content">
-        <h3 className="badge--header">Badge:{props.id}</h3>
+        <h3 className="badge--header" style={{backgroundColor: bgColor}} >Badge:{props.num}</h3>
         <ul>
           <li key={props.id}>Name: {props.firstName} {props.lastName}</li>
           <li>Place of birth: {props.birthPlace}</li>
