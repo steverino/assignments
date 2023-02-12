@@ -1,4 +1,5 @@
 import React from "react";
+import RandomBg from "./components/RandomBg";
 
 
 
@@ -6,7 +7,7 @@ import React from "react";
 export default function App() {
     return(
         <>
-              
+        <RandomBg/>      
         </>
     )
 }
