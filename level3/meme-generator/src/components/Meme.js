@@ -5,10 +5,11 @@ export default function Meme() {
    
 let images = memesData.data.memes;
 
+const [randImage, setRandImage] = React.useState([images])
+
 function randomImage(){
     let randImg = images[Math.floor(Math.random()*images.length)]
-    
-    return (randImg.url)
+    setRandImage(randImg.url)
 }
     
      
@@ -34,7 +35,7 @@ function randomImage(){
                 </button>
             </div>
                 <div className="meme--image">
-                    <img src={randomImage() } alt="random" />
+                    <img src={randImage} alt="random" />
                 </div>
         </main>
     )
