@@ -72,6 +72,7 @@ main {
 
 .meme--image {
     margin-top: 1rem;
+    position: relative;
     
     
 }
@@ -79,4 +80,22 @@ main {
 .meme--image img{
     width: 100%;
  
+}
+
+.top-text{
+    position: absolute;
+    left: 40%;
+    top: 5px;
+    color: goldenrod;
+    font-size: 3rem;
+    
+}
+
+.bottom-text{
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    color: goldenrod;
+    font-size: 3rem;
+    
 }
