@@ -32,13 +32,9 @@ const [num, setNum] = React.useState(1)
     setNum((number)=>{
       return number + 1
     })
-
-
-    setList((prevList) => {
-      
-      return [
+   setList((prevList) => {
+       return [
         ...prevList,
-
         <Badge
           id={num}
           firstName={formData.firstName}
