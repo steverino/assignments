@@ -1,24 +1,25 @@
 import React from "react";
 import axios from "axios";
-
+import MemesList from "./MemesList";
 
 const baseURL = "https://api.imgflip.com/get_memes";
 
 export default function Meme() {
   const [randImage, setRandImage] = React.useState("./logo192.png");
 
-  const [memes, setMemes] = React.useState([]);
+  const [memes, setMemes] = React.useState([baseURL]);
   React.useEffect(() => {
     axios.get(baseURL).then((response) => {
       setMemes(response.data.data.memes);
     });
   }, []);
   
+
   function randomImage() {
     let randImg = Math.floor(Math.random() * memes.length);
     const url = memes[randImg].url;
-    
-    console.log(randImg)
+
+   
     setRandImage(url);
   }
 
@@ -26,7 +27,7 @@ export default function Meme() {
     topText: "",
     bottomText: "",
   });
-  
+
   function handleChange(event) {
     setMyInput((prevInput) => {
       return {
@@ -36,23 +37,32 @@ export default function Meme() {
     });
   }
 
-  const [data,setData] = React.useState({
-    topText: '',
-    bottomText:'',
-    image:''
-  })
-  function sendToList(){
-    setData({
-      topText: myInput.topText,
-    bottomText:myInput.bottomText,
-    image:randImage
-    })
+  const [data, setData] = React.useState({
     
-  }
+  });
   
+  const [list, setList] =React.useState([])
+  
+  function sendToList() {
+    
+    setList((prevList)=> {
+      return[
+      ...prevList,
+      <MemesList topText={data.topText} image={data.image} bottomText={data.bottomText}/>
+      ]
+    })
+    setData((prevData)=>{
+      return {
+        ...prevData,
+        topText: myInput.topText,
+        bottomText: myInput.bottomText,
+        image: randImage,
+      }
+    });
+  }
+
   return (
     <main>
-      
       <div className="form">
         <input
           type="text"
@@ -80,9 +90,18 @@ export default function Meme() {
         <p className="bottom-text">{myInput.bottomText}</p>
       </div>
       <div>
-      <button onClick={() => sendToList() }>Send</button>
+        <button onClick={() => sendToList()}>Send to List</button>
       </div>
-      
+      <ul>
+        {list.map((item, index) => {
+                    
+          return (
+            <li key={index}>
+              {item} 
+            </li>
+          );
+        })}
+      </ul>
     </main>
   );
 }
