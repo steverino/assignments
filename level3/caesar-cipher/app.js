@@ -30,8 +30,6 @@ spreadInput.map((letter) => {
 }
   newLetter += [String.fromCharCode(newLetterCode)];
   
-  
-  
 });
 console.log(newLetter);
 
