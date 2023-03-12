@@ -7,7 +7,8 @@ const Navbar = () => {
         <a class="active" href="#home">
           Home
         </a>
-        <a href="#news">News</a>
+        <a href="#">Work Experience</a>
+        <a href="#">Projects</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a>
       </div>
