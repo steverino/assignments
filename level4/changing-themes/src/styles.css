@@ -16,6 +16,11 @@ ul {
     color: #fff; 
 }
 
+.other-theme {
+    background-color: #35eb7e;
+    color: #e93bd5; 
+}
+
 .nav-list{
     display: flex;
     justify-content: space-around;

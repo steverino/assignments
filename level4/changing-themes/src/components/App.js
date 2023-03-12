@@ -1,20 +1,33 @@
-import React, { useState } from "react";
+import React, {useContext} from "react";
 import Page from "./Page";
 import Footer from "./Footer";
-import Header from "./Header";
-import {ThemeContextProvider} from "./themeContext";
+import Header from "./Header"
+import {ThemeContext} from './themeContext';
 
-function App(props) {
+function App() {
+  const context = useContext(ThemeContext)
+  if(context.color === 'dark'){
+    return (
+      <>
+        
+          <Footer/>
+          <Page />
+          <Header />
+        
+      </>
+    );    
+  }else{
+    return (
+      <>
+        
+          <Header />
+          <Page />
+          <Footer/>
+        
+      </>
+    );
+  }
   
-  return (
-    <>
-      <ThemeContextProvider>
-        <Header />
-        <Page />
-        <Footer/>
-      </ThemeContextProvider>
-    </>
-  );
 }
 
 export default App;
