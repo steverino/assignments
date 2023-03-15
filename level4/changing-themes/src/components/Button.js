@@ -8,7 +8,7 @@ function Button(props) {
     <>
       
       <div>
-        <select  onChange={selectTheme}>
+        <select onChange={selectTheme}>
         <option value="">--Choose Theme--</option>
         <option value="light">Light</option>
         <option value="dark">Dark</option>
