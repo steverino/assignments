@@ -4,7 +4,7 @@ import Header from "./Header";
 
 
 const App = () => {
-const baseURL = 'https://api.vschool.io/sfalvo/thing/'
+// const baseURL = 'https://api.vschool.io/sfalvo/thing/'
 
   return (
     <>
