@@ -6,15 +6,30 @@ const Create = () => {
   const [description, setDescription] = useState("DESCRIPTION");
   const [image, setImage] = useState("IMAGE");
   const [posts, setPosts] = useState([])
+  const [deleteMsg, setDeleteMsg] = useState("");
+  
+  // useEffect(() => {
+    
+  //     axios.get("https://api.vschool.io/sfalvo/thing").then((response) => {
+  //       setPosts(response.data);
+  //       // console.log(response.data);  
+  //     });
+      
+  // }, []);
+
+  const getImages = () => {
+    axios.get("https://api.vschool.io/sfalvo/thing").then((response) => {
+      console.log(response.data);
+      setPosts(response.data);
+    });
+  };
   
   useEffect(() => {
-    
-      axios.get("https://api.vschool.io/sfalvo/thing").then((response) => {
-        setPosts(response.data);
-        // console.log(response.data);  
-      });
-      
+    getImages();
   }, []);
+
+
+
   const postImage = () => {
     axios
     .post("https://api.vschool.io/sfalvo/thing", {
@@ -24,7 +39,7 @@ const Create = () => {
     })
     .then((response) => {
       console.log(response.data);
-      setPosts(response.data);
+      setPosts((prev)=>[...prev,response.data] );
       console.log(Array.isArray(posts))
       console.log(posts);
       
@@ -40,14 +55,30 @@ const Create = () => {
     })
   }
 
-  const deleteImage=(id)=>{
+  // const deleteImage=(id)=>{
+  //   axios
+  //     .delete(`https://api.vschool.io/sfalvo/thing/${id}`)
+  //     .then(() => {
+  //       alert("Post deleted!");
+  //       setPosts(posts)
+  //     });
+  // }
+
+  const deleteImage = (id) => {
     axios
       .delete(`https://api.vschool.io/sfalvo/thing/${id}`)
-      .then(() => {
-        alert("Post deleted!");
-        setPosts(null)
+      .then((response) => {
+        console.log(response.data);
+        posts.filter((post) => {
+          setDeleteMsg(response.data.msg + ' ' + post.title);
+          setTimeout(() => {
+            setDeleteMsg("");
+          }, 3000);
+          getImages();
+          return post
+        });
       });
-  }
+  };
   return (
     <>
       <form className="form">
@@ -77,6 +108,7 @@ const Create = () => {
           </button>
         </div>
       </form>
+      <div>{deleteMsg}</div>
       <section className="container">
         <div>{title}</div>
         <div>{description}</div>
