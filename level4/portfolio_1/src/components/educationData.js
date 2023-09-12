@@ -1,4 +1,7 @@
-export default [
+
+
+
+export const educationData = [
   {
     startYear: 2026,
     endYear: 2029,

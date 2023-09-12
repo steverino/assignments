@@ -1,4 +1,4 @@
-import educationData from "./educationData";
+import {educationData} from "./educationData";
 
 const Education = () => {
   const schools = educationData.map((school) => {
