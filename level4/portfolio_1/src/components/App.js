@@ -6,12 +6,12 @@ import Hero from './Hero'
 
 const App = () => {
   return (
-    <div>
+    <>
         <Hero/>
         <Header/>
-        <Main/>
+        
         <Footer/>
-    </div>
+    </>
   )
 }
 

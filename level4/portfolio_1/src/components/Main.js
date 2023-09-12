@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import WorkExperience from "./WorkExperience";
+import Education from "./Education";
 
 const Main = () => {
   return (
-    <div className='main'>Main</div>
-  )
-}
+    <>
+      <div className="main">
+      
+        <WorkExperience />
+      
+        <Education />
+      </div>
+    </>
+  );
+};
 
-export default Main
+export default Main;

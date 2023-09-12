@@ -28,6 +28,16 @@
 
   .main{
     border: solid 1px #070;
+    display: flex;
+
+  }
+
+  .work-experience {
+    width: 25%;
+  }
+
+  .education {
+    width: 25%;
   }
 
   .footer{
