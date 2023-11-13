@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../App";
 
 const Header = () => {
-  return <div className="header">Header</div>;
+  const myUser = useContext(UserContext);
+
+  return (
+    <>
+      <div className="header">Ugly Things
+        <div className="welcome">Welcome {myUser}</div>
+      </div>
+    </>
+  );
 };
 
 export default Header;
